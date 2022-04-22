@@ -94,7 +94,7 @@ final class ChooseLocationMethodModalView: UIView {
     
     // MARK: Public Functions
     
-    func setupLayoutConstraints() {
+    private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
             mainStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Layout.mainStackViewInset),
             mainStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Layout.mainStackViewInset),

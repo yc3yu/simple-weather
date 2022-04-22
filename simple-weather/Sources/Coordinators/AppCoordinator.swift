@@ -8,26 +8,23 @@
 import Foundation
 import UIKit
 
-final class AppCoordinator: NSObject, Coordinator {
+final class AppCoordinator: Coordinator {
     
     // MARK: Properties
     
-    private let navigationController: UINavigationController
-    
-    var coordinatorDelegate: CoordinatorDelegate?
+    var childCoordinators = [Coordinator]()
+    var navigationController: UINavigationController
     
     // MARK: Initialization
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        
-        super.init()
     }
     
-    func start(animated: Bool) {
+    func start() {
         let chooseLocationMethodModalViewController = ChooseLocationMethodModalViewController()
-        
-        navigationController.present(chooseLocationMethodModalViewController, animated: animated)
+        chooseLocationMethodModalViewController.appCoordinator = self
+        navigationController.pushViewController(chooseLocationMethodModalViewController, animated: false)
     }
     
 }

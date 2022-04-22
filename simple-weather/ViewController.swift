@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         
         view.backgroundColor = .blue
         view.addSubview(titleLabel)
+        titleLabel.center = self.view.center
         
 //        let emptyView = ChooseLocationMethodModalView()
 //        let viewModel = ChooseLocationMethodModalViewModel()
